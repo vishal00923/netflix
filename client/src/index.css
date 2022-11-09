@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    @apply font-[Raleway];
+    @apply font-[Roboto];
     @apply scroll-smooth;
   }
 
@@ -20,6 +20,6 @@
   h4,
   h5,
   h6 {
-    @apply font-[900];
+    @apply font-[500];
   }
 }
