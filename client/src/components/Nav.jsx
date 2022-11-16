@@ -1,38 +1,40 @@
-import { ReactComponent as Logo } from '../assets/logo.svg';
+import logo from '../assets/logo.svg';
 
 export default function Nav() {
   return (
-    <nav className='w-full px-6 py-6 flex justify-between items-center mb-[8vh] sm:px-8 sm:py-8 sm:mb-[10vh] lg:px-12 lg:mb-[12vh]'>
-      <Logo className='w-[80px] h-[auto] sm:w-[100px] md:w-[112px] lg:w-[125px] xl:w-[150px] 2xl:w-[165px]' />
-      <div className='flex items-center space-x-4 sm:space-x-6 md:space-x-7 lg:space-x-8'>
-        <div>
+    <nav
+      className='px-5 pt-5 w-full h-[65px] 
+    tablet:px-10 tablet:pt-6 tablet:h-[80px] laptop:px-9 desktop:px-12'
+    >
+      <div className='flex justify-between items-end pt-2'>
+        <img
+          className='w-[90px] h-[auto] tablet:w-[125px] 
+          laptop:w-[150px] desktop:w-[180px]'
+          src={logo}
+          alt='Netflix'
+        />
+
+        <div className='flex items-center space-x-3 tablet:space-x-6 laptop:space-x-7 desktop:space-x-8'>
           <select
-            className='bg-black/70 text-white px-2 py-[2px] border-[1px] rounded-sm text-sm sm:py-2 lg:px-3'
-            name='language'
-            id='language'
+            className='bg-black text-white tracking-tighter px-1 py-1
+             outline outline-[#ffffffe0] outline-1 text-[0.875rem] 
+             font-semibold tablet:py-1.5 tablet:text-[0.938rem] laptop:py-2 laptop:px-2 desktop:text-[1rem]'
+            name='lang'
+            defaultValue='English'
           >
-            <option
-              selected
-              lang='en'
-              value='/in/'
-              data-language='en'
-              data-country='IN'
-            >
+            <option value='/in/' lang='en'>
               English
             </option>
-            <option
-              lang='hi'
-              value='/in-hi/'
-              data-language='hi'
-              data-country='IN'
-            >
+            <option value='/in-hi/' lang='hi'>
               हिन्दी
             </option>
           </select>
-        </div>
 
-        <div>
-          <button className='bg-red-600 text-white text-sm px-2 py-1 rounded-sm sm:px-4 sm:py-[6px] md:px-5 md:py-[8px] lg:font-medium lg:text-[0.925rem]'>
+          <button
+            className='bg-red-600 text-white tracking-tighter inline-block 
+            px-2 py-1 text-[0.8rem] rounded-sm font-semibold tablet:px-3 
+            tablet:py-1.5 tablet:text-[0.9rem] laptop:text-[1rem] transition-all hover:bg-red-400'
+          >
             Sign In
           </button>
         </div>
