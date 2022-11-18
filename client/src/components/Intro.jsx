@@ -3,8 +3,8 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline';
 export default function Intro() {
   return (
     <main className='max-w-[920px] py-14 mx-auto px-6 tablet:py-[85px] tablet:px-10 tablet:max-w-[620px] laptop:max-w-[800px] laptop:py-24 desktop:py-32'>
-      <div className='py-8 mx-auto'>
-        <h1 className='text-white text-[1.75rem] text-center leading-[32px] tablet:text-[2.8rem] tablet:leading-[48px] laptop:text-[3.75rem] laptop:leading-[60px] desktop:text-[4.125rem] desktop:leading-[70px]'>
+      <div className='py-8'>
+        <h1 className='text-white text-[1.68rem] text-center leading-[32px] tablet:text-[2.8rem] tablet:leading-[48px] laptop:text-[3.75rem] laptop:leading-[60px] desktop:text-[4.125rem] desktop:leading-[70px]'>
           Unlimited movies, TV shows and more.
         </h1>
         <div className='w-full flex flex-col items-center'>
@@ -32,7 +32,7 @@ export default function Intro() {
 
           <button
             className='bg-red-600 text-white font-semibold flex justify-center 
-          items-center space-x-2 px-3.5 py-2 rounded-sm laptop:rounded-tl-none laptop:rounded-bl-none laptop:w-full laptop:max-w-[225px] laptop:h-[60px] laptop:text-[1.5rem] desktop:h-[65px] desktop:text-[1.65rem] active:outline outline-[2.8px] outline-red-900'
+          items-center space-x-1 px-3.5 py-2 rounded-sm laptop:rounded-tl-none laptop:rounded-bl-none laptop:w-full laptop:max-w-[225px] laptop:h-[60px] laptop:text-[1.5rem] desktop:h-[65px] desktop:text-[1.65rem] active:outline outline-[2.8px] outline-red-900 laptop:space-x-1.5 desktop:space-x-2'
           >
             <span>Get Started</span>
             <ChevronRightIcon className='w-[16.5px] h-auto laptop:w-6' />
