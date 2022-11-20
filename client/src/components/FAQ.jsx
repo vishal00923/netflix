@@ -1,4 +1,4 @@
-import Accordian from './Accordian';
+import Accordion from './Accordion';
 
 export default function FAQ() {
   return (
@@ -10,7 +10,7 @@ export default function FAQ() {
           </h2>
 
           <div className='py-2 w-[75%]'>
-            <Accordian />
+            <Accordion />
           </div>
         </div>
       </div>
