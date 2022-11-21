@@ -14,7 +14,7 @@ export default function FAQ() {
             <Accordion />
           </div>
 
-          <div className='pt-2 w-[420px] mx-auto tablet:pt-3 tablet:w-[520px]  laptop:pt-4 laptop:w-[620px] desktop:pt-5 desktop:w-[720px]'>
+          <div className='pt-2 max-w-[420px] mx-auto tablet:pt-3 tablet:max-w-[520px]  laptop:pt-4 laptop:max-w-[620px] desktop:pt-5 desktop:max-w-[720px]'>
             <p className='max-w-[320px] mx-auto text-white text-center text-[1.1rem] mt-4 leading-[25px] tablet:text-[1.2rem] tablet:max-w-[425px] laptop:max-w-[680px] laptop:mt-5'>
               Ready to watch? Enter your email to create or restart your
               membership.
