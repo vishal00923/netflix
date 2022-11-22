@@ -21,7 +21,7 @@ export default function GetStarted() {
           items-center space-x-1 px-3.5 py-2 rounded-sm laptop:rounded-tl-none laptop:rounded-bl-none laptop:w-full laptop:max-w-[225px] laptop:h-[60px] laptop:text-[1.5rem] desktop:h-[65px] desktop:text-[1.65rem] active:outline outline-[2.8px] outline-red-900 laptop:space-x-1.5 desktop:space-x-2'
       >
         <span>Get Started</span>
-        <ChevronRightIcon className='w-[16.5px] h-auto laptop:w-6' />
+        <ChevronRightIcon className='w-[16.5px] h-auto laptop:w-6 transition-all hover:pl-1' />
       </button>
     </form>
   );
