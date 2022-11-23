@@ -64,3 +64,5 @@ function AccordionItem({ faq, active, onToggle }) {
     </li>
   );
 }
+
+// px-5 py-5 tablet:px-6 tablet:py-[22px] laptop:px-7 laptop:py-6 desktop:px-8 desktop:py-[26px]
