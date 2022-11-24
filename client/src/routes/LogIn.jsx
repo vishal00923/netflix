@@ -1,13 +1,20 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/logo.svg';
+import Footer from '../components/Footer';
+import Select from '../components/Select';
 
 export default function LogIn() {
+  const [toggle, setToggle] = useState('hidden');
   const [isChecked, setIsChecked] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <div className='w-full h-full'>
-      <div className='max-w-[1224px] mx-auto px-4 py-4'>
+      <div className='max-w-[1224px] max-h-[70vh] mx-auto px-4 pt-3 pb-10 border-b-[1px] border-[#888888]'>
         <img className='w-[165px] h-auto' src={logo} alt='Netflix' />
 
         <div className='px-1 py-8'>
@@ -59,7 +66,68 @@ export default function LogIn() {
               </p>
             </div>
           </form>
+
+          <div className='pt-8 px-1'>
+            <p className='text-[#888888] text-[15.5px] pb-3'>
+              New to Netflix?
+              <span
+                onClick={() => navigate('/')}
+                className='text-white text-[16px] pl-1 cursor-pointer hover:underline'
+              >
+                Sign up now
+              </span>
+              .
+            </p>
+            <p className='text-[#888888] text-[12.5px] pb-5 w-full'>
+              This page is protected by Google reCAPTCHA to ensure you're not a
+              bot.
+              <br />
+              <span
+                onClick={() => setToggle('')}
+                className={`${
+                  toggle.length === 0 && 'hidden'
+                } text-blue-500 text-[13px] cursor-pointer hover:underline`}
+              >
+                Learn more.
+              </span>
+            </p>
+            <div
+              className={`${
+                toggle === 'hidden'
+                  ? 'overflow-hidden h-0 transition-all'
+                  : 'h-auto transition-all'
+              } max-w-[438px] my-1`}
+            >
+              <p className='text-[#8c8c8c] text-[13px] leading-[14px]'>
+                The information collected by Google reCAPTCHA is subject to the
+                Google{' '}
+                <a
+                  className='text-blue-500 hover:underline'
+                  target='blank'
+                  href='https://policies.google.com/privacy'
+                >
+                  Privacy Policy
+                </a>{' '}
+                and{' '}
+                <a
+                  className='text-blue-500 hover:underline'
+                  target='blank'
+                  href='https://policies.google.com/terms'
+                >
+                  Terms of Service
+                </a>
+                , and is used for providing, maintaining, and improving the
+                reCAPTCHA service and for general security purposes (it is not
+                used for personalised advertising by Google).
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div className='max-w-[1224px] mx-auto text-[#8b8b8b] px-[25px] pt-8 pb-14'>
+        <Footer />
+        <Select />
       </div>
     </div>
   );
