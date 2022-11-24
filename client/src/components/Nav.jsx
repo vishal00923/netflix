@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+
 import logo from '../assets/logo.svg';
 
 export default function Nav() {
+  const navigate = useNavigate();
+
   return (
     <nav
       className='px-5 pt-4 w-full h-[65px] 
@@ -31,6 +35,7 @@ export default function Nav() {
           </select>
 
           <button
+            onClick={() => navigate('/login')}
             className='w-[65px] bg-red-600 text-white tracking-tighter inline-block 
             px-2 py-1 text-[0.875rem] rounded-sm font-normal tablet:px-3 
             tablet:py-1.5 tablet:text-[0.9rem] tablet:w-[80px] laptop:text-[1rem] laptop:w-[90px] transition-all hover:bg-red-500'
