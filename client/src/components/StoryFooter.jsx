@@ -5,7 +5,7 @@ export default function StoryFooter() {
   return (
     <footer className='w-full'>
       <div className='max-w-[1224px] mx-auto pl-8'>
-        <div className='max-w-[390px] mx-auto text-[#8b8b8b] py-12 px-2 tablet:px-5 tablet:max-w-[520px] laptop:max-w-[720px] desktop:max-w-[920px]'>
+        <div className='max-w-[390px] mx-auto text-[#8b8b8b] pt-12 pb-3.5 px-2 tablet:px-5 tablet:max-w-[520px] laptop:max-w-[720px] desktop:max-w-[920px]'>
           <Footer />
           <Select />
           <div className='py-5'>

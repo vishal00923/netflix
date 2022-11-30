@@ -31,7 +31,7 @@ function AccordionItem({ faq, active, onToggle }) {
   const { question, answer } = faq;
 
   return (
-    <li className='bg-[#303030] w-[360px] tablet:w-[510px] laptop:w-[750px] desktop:w-[850px]'>
+    <li className='bg-[#303030] w-[375px] mobile:w-[480px] tablet:w-[510px] laptop:w-[750px] desktop:w-[850px]'>
       <div
         onClick={onToggle}
         className='transition-all px-5 py-3.5 border-b-[1px] border-black flex justify-between items-center cursor-pointer tablet:px-6 tablet:py-3.5 laptop:px-7 laptop:py-4 desktop:px-8 desktop:py-4'

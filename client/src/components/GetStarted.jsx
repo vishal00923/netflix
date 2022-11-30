@@ -1,8 +1,13 @@
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export default function GetStarted() {
+  const handleForm = (event) => event.preventDefault();
+
   return (
-    <form className='flex flex-col items-center mt-3 pb-1.5 space-y-3.5 laptop:flex-row laptop:space-y-0 laptop:mt-6'>
+    <form
+      onSubmit={handleForm}
+      className='flex flex-col items-center mt-3 pb-1.5 space-y-3.5 laptop:flex-row laptop:space-y-0 laptop:mt-6'
+    >
       <div className='w-full relative'>
         <input
           className='peer w-full h-[48px] text-[0.975rem] outline outline-1 outline-gray-500 text-black rounded-sm font-semibold pl-2.5 pt-2 placeholder-transparent focus:outline focus:outline-1 
