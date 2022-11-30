@@ -17,28 +17,28 @@ export default function LogIn() {
   return (
     <div className='w-full h-full login:bg-login-screen login:bg-cover'>
       <div className='bg-black/50'>
-        <div className='px-3.5 pt-4 tablet:px-[18px] tablet:pt-[18px] login:px-5 login:pt-5 laptop:px-8 laptop:pt-[22px] desktop:px-12 desktop:pt-6'>
+        <div className='px-3.5 pt-5 tablet:px-[18px] login:px-5 login:pt-[22px] laptop:px-8 laptop:pt-6 desktop:px-12'>
           <img
             onClick={() => navigate('/')}
-            className='w-[165px] h-auto cursor-pointer'
+            className='w-[78px] h-auto cursor-pointer mobile:w-[160px] login:w-[165px] desktop:w-[180px]'
             src={logo}
             alt='Netflix'
           />
         </div>
 
         <div
-          className='max-w-[1224px] mx-auto px-4 pb-10 border-b-[1px] 
+          className='max-w-[1224px] mx-auto px-2 pb-[60px] border-b-[1px] 
       border-[#888888] tablet:px-6 tablet:pt-[18px] login:pt-0.5 login:border-none login:mb-10 laptop:mb-11 desktop:mb-12'
         >
-          <div className='px-1 py-8 login:bg-black/80 login:z-[10] login:max-w-[432px] login:h-[70vh] login:mx-auto login:px-[58px] login:pt-16 login:mt-6'>
-            <h2 className='text-white text-[2.125rem] font-bold pl-2'>
+          <div className='px-1 pt-5 pb-12 mobile:pt-6 mobile:pb-6 login:rounded-[4.5px] login:bg-black/70 login:z-[10] login:max-w-[432px] login:h-[72vh] login:mx-auto login:px-[58px] login:pt-[52px] login:mt-6'>
+            <h2 className='text-white text-[2.125rem] font-bold pl-2 pb-1'>
               Sign In
             </h2>
             <form
               onSubmit={handleForm}
-              className='px-1.5 py-5 flex flex-col justify-center space-y-4'
+              className='px-1.5 py-5 flex flex-col justify-center space-y-2.5'
             >
-              <div className='relative'>
+              <div className='relative pb-1.5'>
                 <input
                   className='peer pt-3.5 outline-none caret-white w-full h-[52px] bg-[#333333] placeholder-transparent rounded-[4px] px-5 placeholder:text-[0.875rem] placeholder:font-semibold focus:bg-[#454545] login:w-[300px]'
                   type='email'
@@ -50,7 +50,7 @@ export default function LogIn() {
                 </label>
               </div>
 
-              <div className='relative'>
+              <div className='relative pb-1.5'>
                 <input
                   className='peer pt-3.5 outline-none caret-white w-full h-[52px] bg-[#333333] placeholder-transparent rounded-[4px] px-5 placeholder:text-[0.875rem] placeholder:font-semibold focus:bg-[#454545]
                 login:w-[300px]'
@@ -90,7 +90,7 @@ export default function LogIn() {
               </div>
             </form>
 
-            <div className='pt-8 px-1'>
+            <div className='px-1 mobile:pt-[22px] login:pt-[54px]'>
               <p className='text-[#888888] text-[15.5px] pb-3'>
                 New to Netflix?
                 <span
@@ -101,7 +101,7 @@ export default function LogIn() {
                 </span>
                 .
               </p>
-              <p className='text-[#888888] text-[12.5px] pb-5 w-full'>
+              <p className='w-full text-[#888888] text-[12.5px] pb-3 mobile:pb-6'>
                 This page is protected by Google reCAPTCHA to ensure you're not
                 a bot.{' '}
                 <span
@@ -115,10 +115,10 @@ export default function LogIn() {
               </p>
               <div
                 className={`transition-all ${
-                  toggle === 'hidden' ? 'overflow-hidden h-0' : 'h-5'
+                  toggle === 'hidden' ? 'overflow-hidden h-0' : 'h-[11.5px]'
                 }`}
               >
-                <p className='max-w-[438px] text-[#8c8c8c] text-[12.6px] leading-[14px] tablet:leading-[16px] tablet:max-w-[618px]'>
+                <p className='max-w-[345px] text-[#8c8c8c] text-[12.5px] leading-4 mobile:max-w-[420px] tablet:leading-[16px] tablet:max-w-[618px]'>
                   The information collected by Google reCAPTCHA is subject to
                   the Google{' '}
                   <a
@@ -146,7 +146,7 @@ export default function LogIn() {
         </div>
 
         <div className='w-full bg-black/70'>
-          <div className='max-w-[980px] mx-auto text-[#8b8b8b] px-6 pt-8 pb-14 tablet:px-8'>
+          <div className='max-w-[980px] mx-auto text-[#8b8b8b] px-6 pt-8 pb-12 tablet:px-8'>
             <Footer />
             <Select />
           </div>
