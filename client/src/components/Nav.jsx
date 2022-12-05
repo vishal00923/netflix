@@ -1,22 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
-import logo from '../assets/logo.svg';
+import Logo from './Logo';
 
 export default function Nav() {
   const navigate = useNavigate();
 
   return (
     <nav
-      className='px-5 pt-4 w-full h-[65px] 
+      className='px-5 pt-2 w-full h-[65px] 
     tablet:px-10 tablet:pt-5 tablet:h-[80px] laptop:px-9 desktop:px-12'
     >
       <div className='flex justify-between items-center space-x-6 pt-2'>
-        <img
-          className='w-[90px] h-[auto] tablet:w-[125px] 
-          laptop:w-[150px] desktop:w-[180px]'
-          src={logo}
-          alt='Netflix'
-        />
+        <Logo />
 
         <div className='flex items-center pb-[12px] space-x-3 tablet:space-x-6 laptop:space-x-7 desktop:space-x-8'>
           <select
