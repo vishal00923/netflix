@@ -1,13 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
 import Logo from './Logo';
+import profile from '../assets/profile.png';
 
 export default function Nav() {
   const navigate = useNavigate();
 
   return (
     <nav
-      className='px-5 pt-2 w-full h-[65px] 
+      className='px-6 pt-2 w-full h-[65px] 
     tablet:px-10 tablet:pt-5 tablet:h-[80px] laptop:px-9 desktop:px-12'
     >
       <div className='flex justify-between items-center space-x-6 pt-2'>
@@ -29,14 +30,18 @@ export default function Nav() {
             </option>
           </select>
 
-          <button
-            onClick={() => navigate('/login')}
-            className='w-[65px] bg-red-600 text-white tracking-tighter inline-block 
+          {true ? (
+            <img className='rounded-[4px]' src={profile} alt='Profile' />
+          ) : (
+            <button
+              onClick={() => navigate('/login')}
+              className='w-[65px] bg-red-600 text-white tracking-tighter inline-block 
             px-2 py-1 text-[0.875rem] rounded-sm font-normal tablet:px-3 
             tablet:py-1.5 tablet:text-[0.9rem] tablet:w-[80px] laptop:text-[1rem] laptop:w-[90px] transition-all hover:bg-red-500'
-          >
-            Sign In
-          </button>
+            >
+              Sign In
+            </button>
+          )}
         </div>
       </div>
     </nav>
