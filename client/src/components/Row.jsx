@@ -1,5 +1,6 @@
 import { baseURL } from '../utils/helper';
 import { useState, useEffect } from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 import Axios from '../api/axios';
 
@@ -8,6 +9,8 @@ import Loader from './Loader';
 export default function Row({ title, url }) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const filterMovies = movies.filter((movie) => movie?.backdrop_path !== null);
 
   useEffect(() => {
     let mounted = true;
@@ -34,22 +37,26 @@ export default function Row({ title, url }) {
     };
   }, [url]);
 
-  if (loading) {
-    return <Loader w='w-12' h='h-8' />;
-  }
+  if (loading) return <Loader w='w-12' h='h-8' />;
 
   return (
     <div className='flex flex-col'>
-      <h1 className='text-white text-[16.5px] pb-1'>{title}</h1>
-      <div className='flex items-center space-x-2 overflow-x-scroll scrollbar-hide'>
-        {movies.map((movie) => (
-          <img
-            key={movie?.id}
-            className='w-[290px] h-[120px]'
-            src={`${baseURL}/${movie?.backdrop_path || movie?.poster_path}`}
-            alt={movie?.name}
-          />
-        ))}
+      <h1 className='text-white text-[20px] pb-2'>{title}</h1>
+      <div className='relative'>
+        <ChevronLeftIcon
+          className='absolute top-10 left-2 w-8 h-8 m-auto'
+          color='white'
+        />
+        <div className='flex items-center space-x-2 overflow-x-scroll scrollbar-hide'>
+          {filterMovies.map((movie) => (
+            <img
+              key={movie?.id}
+              className='h-[125px] object-contain cursor-pointer rounded-[5px]'
+              src={`${baseURL}/${movie?.backdrop_path}`}
+              alt={movie?.name}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -6,8 +6,10 @@ import {
   fetchComedyMovies,
   fetchHorrorMovies,
   fetchRomanceMovies,
+  fetchDocumentaries,
+  fetchNetflixOriginals,
 } from '../api/requests';
-import { randomNumGenerator, baseURL } from '../utils/helper';
+import { baseURL, randomNumGenerator } from '../utils/helper';
 
 import { PlayIcon } from '@heroicons/react/24/solid';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
@@ -56,10 +58,10 @@ export default function Home() {
   }
 
   return (
-    <main className='w-full h-full flex flex-col'>
-      <div className='absolute top-0 -z-[10]'>
+    <main className=''>
+      <div className='absolute top-0 left-0 -z-[10]'>
         <img
-          className='w-screen h-[60vh] object-cover object-center opacity-70'
+          className='w-screen h-[95vh] object-cover opacity-70'
           src={`${baseURL}/${movie?.backdrop_path || movie?.poster_path}`}
           alt={movie?.name}
         />
@@ -92,6 +94,8 @@ export default function Home() {
         <Row url={fetchComedyMovies} title='Comedy Movies' />
         <Row url={fetchHorrorMovies} title='Horror Movies' />
         <Row url={fetchRomanceMovies} title='Romance Movies' />
+        <Row url={fetchNetflixOriginals} title='Netflix Originals' />
+        <Row url={fetchDocumentaries} title='Documentries' />
       </div>
     </main>
   );
