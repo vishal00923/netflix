@@ -59,7 +59,7 @@ export default function Home() {
 
   return (
     <main className=''>
-      <div className='absolute top-0 left-0 -z-[10]'>
+      <div className='absolute top-0 left-0 -z-10'>
         <img
           className='w-screen h-[95vh] object-cover opacity-70'
           src={`${baseURL}/${movie?.backdrop_path || movie?.poster_path}`}
