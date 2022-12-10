@@ -75,7 +75,7 @@ export default function Row({ title, url }) {
           {filterMovies.map((movie) => (
             <img
               key={movie?.id}
-              className='z-10 h-[125px] object-contain cursor-pointer rounded-[5px]'
+              className='z-10 h-[115px] object-contain cursor-pointer rounded-[5px]'
               src={`${baseURL}/${movie?.backdrop_path}`}
               alt={movie?.name}
             />
