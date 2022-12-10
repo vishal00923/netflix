@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {
   fetchTrending,
@@ -20,6 +19,7 @@ import user from '../assets/user.png';
 
 import Row from '../components/Row';
 import Logo from '../components/Logo';
+import Menu from '../components/Menu';
 import Loader from '../components/Loader';
 
 export default function Home() {
@@ -73,38 +73,7 @@ export default function Home() {
         <div className='flex justify-between items-center space-x-6 pt-2'>
           <div className='flex justify-center items-center space-x-1'>
             <Logo />
-            <div>
-              <button className='text-white text-sm px-4 py-2.5 transition duration-200 ease-in-out'>
-                Browse
-              </button>
-              <ul className='z-20 bg-black text-[#b4b4b4] text-sm border-[1px] border-[#8c8c8c] absolute top-[58px] left-0 flex flex-col justify-center items-center space-y-4'>
-                <li className='w-[275px]'>
-                  <Link className='block text-center px-4 pt-4 pb-3 hover:cursor-pointer hover:bg-[#1b1b1b]'>
-                    Home
-                  </Link>
-                </li>
-                <li className='w-[275px]'>
-                  <Link className='block text-center px-4 py-3 hover:cursor-pointer hover:bg-[#1b1b1b]'>
-                    TV Shows
-                  </Link>
-                </li>
-                <li className='w-[275px]'>
-                  <Link className='block text-center px-4 py-3 hover:cursor-pointer hover:bg-[#1b1b1b]'>
-                    Movies
-                  </Link>
-                </li>
-                <li className='w-[275px]'>
-                  <Link className='block text-center px-4 py-3 hover:cursor-pointer hover:bg-[#1b1b1b]'>
-                    New & Popular
-                  </Link>
-                </li>
-                <li className='w-[275px]'>
-                  <Link className='block text-center px-4 pt-2.5 pb-4 hover:cursor-pointer hover:bg-[#1b1b1b]'>
-                    My List
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <Menu />
           </div>
 
           <div className='flex items-center pb-[12px] space-x-3 tablet:space-x-6 laptop:space-x-7 desktop:space-x-8'>
