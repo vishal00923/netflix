@@ -16,7 +16,9 @@ export default function Menu() {
         onMouseLeave={() => setIsShown(false)}
         className={`${
           !isShown && 'hidden'
-        } z-20 bg-black text-[#b4b4b4] text-sm border-[1px] border-[#8c8c8c] absolute top-[60px] left-0 flex flex-col justify-center items-center space-y-4 transition duration-300 ease-linear`}
+        } z-20 bg-black text-[#b4b4b4] text-sm border-[1px] border-[#8c8c8c] 
+        absolute top-[60px] left-0 flex flex-col justify-center items-center space-y-4
+        transition duration-300 ease-linear`}
       >
         <li className='w-[275px]'>
           <Link

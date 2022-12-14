@@ -63,7 +63,8 @@ export default function Row({ title, url }) {
       <div className='relative group'>
         <ChevronLeftIcon
           onClick={() => handleClick('left')}
-          className={`z-20 absolute top-0 bottom-0 left-2 my-auto w-8 h-8 transition opacity-0 hover:scale-125 group-hover:opacity-100 cursor-pointer ${
+          className={`z-20 absolute top-0 bottom-0 left-2 my-auto w-8 h-8 
+          transition opacity-0 hover:scale-125 group-hover:opacity-100 cursor-pointer ${
             !isMoved && 'hidden'
           }`}
           color='white'
@@ -83,7 +84,8 @@ export default function Row({ title, url }) {
         </div>
         <ChevronRightIcon
           onClick={() => handleClick('right')}
-          className='z-20 absolute top-0 bottom-0 right-2 my-auto w-8 h-8 transition opacity-0 hover:scale-125 group-hover:opacity-100 cursor-pointer'
+          className='z-20 absolute top-0 bottom-0 right-2 my-auto w-8 h-8 
+          transition opacity-0 hover:scale-125 group-hover:opacity-100 cursor-pointer'
           color='white'
         />
       </div>

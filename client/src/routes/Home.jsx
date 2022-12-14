@@ -69,14 +69,20 @@ export default function Home() {
         />
       </div>
 
-      <nav className='px-6 pt-2 w-full h-[65px] tablet:px-10 tablet:pt-5 tablet:h-[80px] laptop:px-9 desktop:px-12'>
+      <nav
+        className='px-6 pt-2 w-full h-[65px] tablet:px-10 tablet:pt-5
+       tablet:h-[80px] laptop:px-9 desktop:px-12'
+      >
         <div className='flex justify-between items-center space-x-6 pt-2'>
           <div className='flex justify-center items-center space-x-1'>
             <Logo />
             <Menu />
           </div>
 
-          <div className='flex items-center pb-[12px] space-x-3 tablet:space-x-6 laptop:space-x-7 desktop:space-x-8'>
+          <div
+            className='flex items-center pb-[12px] space-x-3 tablet:space-x-6 
+          laptop:space-x-7 desktop:space-x-8'
+          >
             <select
               className='bg-black text-white px-1 py-[2px]
              outline outline-gray-400 outline-1 rounded-sm text-[0.875rem] 
@@ -106,11 +112,17 @@ export default function Home() {
         </h1>
         <p className='text-white text-[12px] pt-3'>{movie?.overview}</p>
         <div className='pt-2 flex items-center space-x-3'>
-          <button className='bg-white px-[18px] py-1.5 flex justify-center items-center space-x-2 rounded-[3.5px] font-[600] transition-all hover:bg-[#ffffffc5]'>
+          <button
+            className='bg-white px-[18px] py-1.5 flex justify-center items-center 
+          space-x-2 rounded-[3.5px] font-[600] transition-all hover:bg-[#ffffffc5]'
+          >
             <PlayIcon className='w-6 h-6' />
             <span className='text-[14px]'>Play</span>
           </button>
-          <button className='bg-[#6f6f7188] px-5 py-1.5 flex justify-center items-center space-x-2 rounded-[3.5px] font-[600] transition-all hover:bg-[#6f6f71d3]'>
+          <button
+            className='bg-[#6f6f7188] px-5 py-1.5 flex justify-center items-center 
+          space-x-2 rounded-[3.5px] font-[600] transition-all hover:bg-[#6f6f71d3]'
+          >
             <InformationCircleIcon className='w-5 h-5' color='white' />
             <span className='text-white text-[14px]'>More Info</span>
           </button>

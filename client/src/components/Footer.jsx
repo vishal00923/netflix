@@ -9,8 +9,15 @@ export default function Footer() {
         </a>
       </p>
 
-      <div className='py-8 max-w-[390px] tablet:max-w-[480px] laptop:max-w-[620px]'>
-        <ul className='text-[0.813rem] grid grid-cols-2 gap-x-8 gap-y-3 tablet:grid-cols-3 tablet:gap-x-24 laptop:grid-cols-4 laptop:gap-x-52 desktop:gap-x-60'>
+      <div
+        className='py-8 max-w-[390px] tablet:max-w-[480px] 
+      laptop:max-w-[620px]'
+      >
+        <ul
+          className='text-[0.813rem] grid grid-cols-2 gap-x-8 
+        gap-y-3 tablet:grid-cols-3 tablet:gap-x-24 laptop:grid-cols-4
+        laptop:gap-x-52 desktop:gap-x-60'
+        >
           <li className='w-[145px]'>
             <a
               className='hover:underline'
