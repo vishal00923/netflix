@@ -1,4 +1,6 @@
-export const faqs = [
+import { FaqsType } from '@/global/types';
+
+export const faqs: Array<FaqsType> = [
   {
     question: `What is Netflix?`,
     answer: {
