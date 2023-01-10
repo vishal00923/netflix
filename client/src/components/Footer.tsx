@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-export default function Footer() {
+export function Footer() {
   return (
     <>
       <p className='text-[0.875rem]'>
@@ -10,12 +10,12 @@ export default function Footer() {
       </p>
 
       <div
-        className='py-8 max-w-[390px] tablet:max-w-[480px] 
+        className='max-w-[390px] py-8 tablet:max-w-[480px] 
       laptop:max-w-[620px]'
       >
         <ul
-          className='text-[0.813rem] grid grid-cols-2 gap-x-8 
-        gap-y-3 tablet:grid-cols-3 tablet:gap-x-24 laptop:grid-cols-4
+          className='grid grid-cols-2 gap-x-8 gap-y-3 
+        text-[0.813rem] tablet:grid-cols-3 tablet:gap-x-24 laptop:grid-cols-4
         laptop:gap-x-52 desktop:gap-x-60'
         >
           <li className='w-[145px]'>

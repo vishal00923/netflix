@@ -1,8 +1,13 @@
-export default function Spinner({ w, h }) {
+type Props = {
+  w: string;
+  h: string;
+};
+
+export function Spinner({ w, h }: Props) {
   return (
     <div role='status'>
       <svg
-        className={`inline mr-2 ${w} ${h} animate-spin fill-red-600`}
+        className={`mr-2 inline ${w} ${h} animate-spin fill-red-600`}
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
