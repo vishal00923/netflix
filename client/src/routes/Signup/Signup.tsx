@@ -6,7 +6,7 @@ import { Footer } from '@/routes/Signup/Footer';
 import { Download } from '@/routes/Signup/Download';
 import { Children } from '@/routes/Signup/Children';
 
-export default function Signup() {
+export function Signup() {
   return (
     <>
       <Header />

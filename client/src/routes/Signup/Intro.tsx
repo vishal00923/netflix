@@ -8,16 +8,16 @@ export function Intro() {
     >
       <div className='py-8'>
         <h1
-          className='text-center text-[1.68rem] leading-[32px] text-white 
-        tablet:text-[2.8rem] tablet:leading-[48px] laptop:text-[3.75rem]
-        laptop:leading-[60px] desktop:text-[4.125rem] desktop:leading-[70px]'
+          className='text-center text-[1.65rem] leading-[32px] text-white 
+        tablet:text-[2.5rem] tablet:leading-[48px] laptop:text-[3.65rem]
+        laptop:leading-[60px] desktop:text-[3.85rem] desktop:leading-[70px]'
         >
           Unlimited movies, TV shows and more.
         </h1>
         <div className='flex w-full flex-col items-center'>
           <p
-            className='mt-5 text-[1.2rem] text-white tablet:text-[1.35rem] 
-          laptop:text-[1.5rem] desktop:text-[1.65rem]'
+            className='mt-5 text-[1.2rem] text-white 
+          tablet:text-[1.35rem] laptop:text-[1.375rem] desktop:text-[1.65rem]'
           >
             Watch anywhere. Cancel anytime.
           </p>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { PlayIcon } from '@heroicons/react/24/solid';
-import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { PlayIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { InformationCircleIcon, BellIcon } from '@heroicons/react/24/outline';
 
 import {
   fetchTrending,
@@ -18,11 +18,12 @@ import Axios from '@/api/axios';
 import user from '@/assets/user.png';
 
 import { Row } from '@/components/Row';
-import { Logo } from '@/components/Logo';
 import { Menu } from '@/components/Menu';
 import { Spinner } from '@/components/Spinner';
 
-export function Main() {
+import { Logo } from '@/routes/Home/Logo';
+
+export function Home() {
   const [movie, setMovie] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -70,35 +71,19 @@ export function Main() {
       </div>
 
       <nav
-        className='h-[65px] w-full px-6 pt-2 tablet:h-[80px] tablet:px-10
-       tablet:pt-5 laptop:px-9 desktop:px-12'
+        className='h-[65px] w-full px-5 tablet:h-[80px] tablet:px-10
+        laptop:px-9 desktop:px-12'
       >
-        <div className='flex items-center justify-between space-x-6 pt-2'>
-          <div className='flex items-center justify-center space-x-1'>
+        <div className='flex items-center justify-between space-x-6'>
+          <div className='flex items-center justify-center space-x-6 pt-2'>
             <Logo />
             <Menu />
           </div>
 
-          <div
-            className='flex items-center space-x-3 pb-[12px] tablet:space-x-6 
-          laptop:space-x-7 desktop:space-x-8'
-          >
-            <select
-              className='rounded-sm bg-black px-1 py-[2px]
-             text-[0.875rem] font-normal text-white outline outline-1 
-             outline-gray-400 tablet:py-[4.5px] tablet:text-[0.938rem] laptop:py-[5px] laptop:px-2 desktop:text-[1rem]'
-              name='lang'
-              defaultValue='English'
-            >
-              <option value='/in/' lang='en'>
-                English
-              </option>
-              <option value='/in-hi/' lang='hi'>
-                हिन्दी
-              </option>
-            </select>
-
-            <img src={user} alt='User' />
+          <div className='flex items-center space-x-5 pt-1'>
+            <MagnifyingGlassIcon className='h-6 w-6' color='white' />
+            <BellIcon className='h-6 w-6' color='white' />
+            <img className='rounded-[3.5px]' src={user} alt='User' />
           </div>
         </div>
       </nav>

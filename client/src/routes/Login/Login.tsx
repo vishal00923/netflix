@@ -7,7 +7,7 @@ import { Select } from '@/components/Select';
 
 import logo from '@/assets/logo.svg';
 
-export function Main() {
+export function Login() {
   const [toggle, setToggle] = useState<string>('hidden');
 
   const navigate = useNavigate();
