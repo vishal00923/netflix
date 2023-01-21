@@ -18,10 +18,10 @@ import Axios from '@/api/axios';
 import user from '@/assets/user.png';
 
 import { Row } from '@/components/Row';
-import { Menu } from '@/components/Menu';
 import { Spinner } from '@/components/Spinner';
 
 import { Logo } from '@/routes/Home/Logo';
+import { Browse } from '@/routes/Home/Browse';
 
 export function Home() {
   const [movie, setMovie] = useState<any>({});
@@ -71,24 +71,24 @@ export function Home() {
       </div>
 
       <nav
-        className='h-[65px] w-full px-5 tablet:h-[80px] tablet:px-10
-        laptop:px-9 desktop:px-12'
+        className='w-full px-5 tablet:px-8
+        laptop:px-8 desktop:px-10'
       >
-        <div className='flex items-center justify-between space-x-6'>
-          <div className='flex items-center justify-center space-x-6 pt-2'>
+        <div className='flex justify-between space-x-6'>
+          <div className='flex w-full items-center space-x-6 pt-2'>
             <Logo />
-            <Menu />
+            <Browse />
           </div>
 
-          <div className='flex items-center space-x-5 pt-1'>
-            <MagnifyingGlassIcon className='h-6 w-6' color='white' />
-            <BellIcon className='h-6 w-6' color='white' />
-            <img className='rounded-[3.5px]' src={user} alt='User' />
+          <div className='flex items-center space-x-5'>
+            <MagnifyingGlassIcon className='h-9 w-9' color='white' />
+            <BellIcon className='h-9 w-9' color='white' />
+            <img className='mt-1 rounded-[3.5px]' src={user} alt='User' />
           </div>
         </div>
       </nav>
 
-      <div className='max-w-[345px] px-6 pt-6'>
+      <div className='max-w-[345px] px-6 pt-6 tablet:px-8'>
         <h1 className='text-[24px] font-[600] leading-8 text-white'>
           {movie?.original_title ||
             movie?.title ||
@@ -114,7 +114,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-center space-y-6 px-6 pt-[56px]'>
+      <div className='flex flex-col items-center justify-center space-y-6 pt-[56px] tablet:px-8'>
         <Row url={fetchTrending} title='Trending Movies' />
         <Row url={fetchTopRated} title='Top Rated' />
         <Row url={fetchActionMovies} title='Action Thrillers' />
