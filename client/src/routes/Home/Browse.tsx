@@ -1,7 +1,7 @@
-import { useState, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { RxTriangleDown, RxTriangleUp } from 'react-icons/rx';
 
+import { Link } from '@/components/Link';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export function Browse() {
@@ -11,24 +11,24 @@ export function Browse() {
   return (
     <>
       {isAboveGivenScreen ? (
-        <div className='w-5/6'>
+        <div className='w-5/6 login:pt-3'>
           <ul className='flex items-center space-x-5 text-[12px] text-white'>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/'>Home</Link>
             </li>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/tv'>TV Shows</Link>
             </li>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/movies'>Movies</Link>
             </li>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/latest'>New & Popular</Link>
             </li>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/my-list'>My List</Link>
             </li>
-            <li className='py-1 transition duration-300 ease-in-out hover:opacity-75'>
+            <li className='py-1'>
               <Link to='/original-audio'>Browse by Langauges</Link>
             </li>
           </ul>
@@ -52,23 +52,23 @@ export function Browse() {
             <div className='absolute -top-4 left-[112px]'>
               <RxTriangleUp className='h-7 w-7' color='white' />
             </div>
-            <ul className='flex w-[250px] flex-col items-center border-t-2 border-white bg-[#000000e0] text-[12px] text-white'>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+            <ul className='flex w-[250px] flex-col items-center border-t-2 border-white bg-[#000000e0] text-center text-[12px] text-white'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/'>Home</Link>
               </li>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/tv'>TV Shows</Link>
               </li>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/movies'>Movies</Link>
               </li>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/latest'>New & Popular</Link>
               </li>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/my-list'>My List</Link>
               </li>
-              <li className='py-4 hover:bg-[#3c3c3c36]'>
+              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
                 <Link to='/original-audio'>Browse by Langauges</Link>
               </li>
             </ul>

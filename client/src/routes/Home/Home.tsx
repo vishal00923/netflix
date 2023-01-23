@@ -22,10 +22,13 @@ import { Spinner } from '@/components/Spinner';
 
 import { Logo } from '@/routes/Home/Logo';
 import { Browse } from '@/routes/Home/Browse';
+import { useScrollY } from '@/hooks/useScrollY';
 
 export function Home() {
   const [movie, setMovie] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(true);
+
+  const isScrolledY = useScrollY();
 
   useEffect(() => {
     let mounted = true;
@@ -64,18 +67,25 @@ export function Home() {
     <main className='relative'>
       <div className='absolute top-0 left-0 -z-10'>
         <img
-          className='h-[95vh] w-screen object-cover opacity-70'
+          className='h-[38vh] w-screen object-cover opacity-70'
           src={`${baseURL}/${movie?.backdrop_path || movie?.poster_path}`}
           alt={movie?.name}
         />
       </div>
-
+      {/* Left Strip */}
+      <div className='absolute left-0 z-20 h-full w-4 bg-black/10'></div>
+      {/* Right Strip */}
+      <div className='absolute right-0 z-20 h-full w-4 bg-black/10'></div>
       <nav
-        className='w-full px-5 tablet:px-8
-        laptop:px-8 desktop:px-10'
+        className={`duration-400 fixed z-20 h-[4.5vh] w-full transition ease-linear ${
+          isScrolledY
+            ? 'bg-black'
+            : 'bg-[#2b27271c] bg-gradient-to-b from-black/10'
+        } px-5 tablet:px-8
+        laptop:px-8 desktop:px-10`}
       >
         <div className='flex justify-between space-x-6'>
-          <div className='flex w-full items-center space-x-6 pt-2'>
+          <div className='flex w-full items-center space-x-6 py-2.5'>
             <Logo />
             <Browse />
           </div>
@@ -88,7 +98,7 @@ export function Home() {
         </div>
       </nav>
 
-      <div className='max-w-[345px] px-6 pt-6 tablet:px-8'>
+      <div className='max-w-[345px] px-6 pt-10 tablet:px-8'>
         <h1 className='text-[24px] font-[600] leading-8 text-white'>
           {movie?.original_title ||
             movie?.title ||
@@ -96,25 +106,22 @@ export function Home() {
             movie?.name}
         </h1>
         <p className='pt-3 text-[12px] text-white'>{movie?.overview}</p>
-        <div className='flex items-center space-x-3 pt-2'>
-          <button
-            className='flex items-center justify-center space-x-2 rounded-[3.5px] bg-white 
-          px-[18px] py-1.5 font-[600] transition-all hover:bg-[#ffffffc5]'
-          >
-            <PlayIcon className='h-6 w-6' />
-            <span className='text-[14px]'>Play</span>
+        <div className='mt-3 flex items-center space-x-1.5'>
+          <button className='flex items-center justify-center space-x-2 rounded-[3.5px] bg-white px-3 py-1 font-semibold transition-all hover:bg-[#ffffffc5]'>
+            <PlayIcon className='h-5 w-5' />
+            <span className='text-[12px]'>Play</span>
           </button>
           <button
             className='flex items-center justify-center space-x-2 rounded-[3.5px] bg-[#6f6f7188] 
-          px-5 py-1.5 font-[600] transition-all hover:bg-[#6f6f71d3]'
+          px-3 py-1 font-semibold transition-all hover:bg-[#6f6f71d3]'
           >
             <InformationCircleIcon className='h-5 w-5' color='white' />
-            <span className='text-[14px] text-white'>More Info</span>
+            <span className='text-[12px] text-white'>More Info</span>
           </button>
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-center space-y-6 pt-[56px] tablet:px-8'>
+      <div className='flex flex-col items-center justify-center space-y-6 pt-8 tablet:px-8'>
         <Row url={fetchTrending} title='Trending Movies' />
         <Row url={fetchTopRated} title='Top Rated' />
         <Row url={fetchActionMovies} title='Action Thrillers' />
