@@ -64,11 +64,11 @@ export function Row({ title, url }: Props) {
 
   return (
     <div className='flex flex-col'>
-      <h1 className='pb-2 text-[20px] text-white'>{title}</h1>
+      <h2 className='pl-6 pb-2 text-[12.5px] text-white'>{title}</h2>
       <div className='group relative'>
         <ChevronLeftIcon
           onClick={() => handleClick('left')}
-          className={`absolute top-0 bottom-0 left-2 z-20 my-auto h-8 w-8 
+          className={`absolute top-0 bottom-0 left-1 z-50 my-auto h-5 w-5 
           cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
             !isMoved && 'hidden'
           }`}
@@ -76,12 +76,12 @@ export function Row({ title, url }: Props) {
         />
         <div
           ref={rowRef}
-          className='flex items-center space-x-1.5 overflow-x-scroll scrollbar-hide'
+          className='flex items-center space-x-1 overflow-x-scroll scrollbar-hide'
         >
           {filterMovies.map((movie: any) => (
             <img
               key={movie?.id}
-              className='z-10 h-[115px] cursor-pointer rounded-[5px] object-contain'
+              className='z-10 h-[138px] w-[138px] cursor-pointer rounded-[5px] object-contain'
               src={`${baseURL}/${movie?.backdrop_path}`}
               alt={movie?.name}
             />
@@ -89,7 +89,7 @@ export function Row({ title, url }: Props) {
         </div>
         <ChevronRightIcon
           onClick={() => handleClick('right')}
-          className='absolute top-0 bottom-0 right-2 z-20 my-auto h-8 w-8 
+          className='absolute top-0 bottom-0 right-1 z-50 my-auto h-5 w-5 
           cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100'
           color='white'
         />
