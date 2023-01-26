@@ -4,6 +4,9 @@ import { RxTriangleDown, RxTriangleUp } from 'react-icons/rx';
 import { Link } from '@/components/Link';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
+import { navLinks } from '@/data/navLinks';
+import { LinksType } from '@/global/types';
+
 export function Browse() {
   const [browseMenu, setBrowseMenu] = useState<boolean>(false);
   const isAboveGivenScreen = useMediaQuery('(min-width: 894px)');
@@ -11,26 +14,13 @@ export function Browse() {
   return (
     <>
       {isAboveGivenScreen ? (
-        <div className='w-5/6 login:pt-3'>
-          <ul className='flex items-center space-x-5 text-[12px] text-white'>
-            <li className='py-1'>
-              <Link to='/'>Home</Link>
-            </li>
-            <li className='py-1'>
-              <Link to='/tv'>TV Shows</Link>
-            </li>
-            <li className='py-1'>
-              <Link to='/movies'>Movies</Link>
-            </li>
-            <li className='py-1'>
-              <Link to='/latest'>New & Popular</Link>
-            </li>
-            <li className='py-1'>
-              <Link to='/my-list'>My List</Link>
-            </li>
-            <li className='py-1'>
-              <Link to='/original-audio'>Browse by Langauges</Link>
-            </li>
+        <div className='w-5/6 py-0.5'>
+          <ul className='flex items-center space-x-5 text-[12px] text-white laptop:text-[13px] desktop:text-[14px] xl:text-[14.375px] 2xl:text-[14.725px]'>
+            {navLinks.map(({ to, name }: LinksType) => (
+              <li className='py-1'>
+                <Link to={to}>{name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       ) : (
@@ -53,24 +43,11 @@ export function Browse() {
               <RxTriangleUp className='h-7 w-7' color='white' />
             </div>
             <ul className='flex w-[250px] flex-col items-center border-t-2 border-white bg-[#000000e0] text-center text-[12px] text-white'>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/'>Home</Link>
-              </li>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/tv'>TV Shows</Link>
-              </li>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/movies'>Movies</Link>
-              </li>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/latest'>New & Popular</Link>
-              </li>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/my-list'>My List</Link>
-              </li>
-              <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
-                <Link to='/original-audio'>Browse by Langauges</Link>
-              </li>
+              {navLinks.map(({ to, name }) => (
+                <li className='w-full py-4 hover:bg-[#3c3c3c36]'>
+                  <Link to={to}>{name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
