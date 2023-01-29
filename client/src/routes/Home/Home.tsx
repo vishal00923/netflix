@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { PlayIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { InformationCircleIcon, BellIcon } from '@heroicons/react/24/outline';
 
 import {
   fetchTrending,
@@ -15,20 +13,16 @@ import {
 import { baseURL, randomNumGenerator } from '@/utils/helper';
 
 import Axios from '@/api/axios';
-import user from '@/assets/user.png';
 
 import { Row } from '@/components/Row';
 import { Spinner } from '@/components/Spinner';
 
-import { Logo } from '@/routes/Home/Logo';
-import { Browse } from '@/routes/Home/Browse';
-import { useScrollY } from '@/hooks/useScrollY';
+import { Nav } from '@/routes/Home/Nav';
+import { Hero } from '@/routes/Home/Hero';
 
 export function Home() {
   const [movie, setMovie] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(true);
-
-  const isScrolledY = useScrollY();
 
   useEffect(() => {
     let mounted = true;
@@ -67,61 +61,15 @@ export function Home() {
     <main className='relative'>
       <div className='absolute top-0 left-0 -z-10'>
         <img
-          className='h-[38vh] w-screen object-cover opacity-70'
-          src={`${baseURL}/${movie?.backdrop_path || movie?.poster_path}`}
-          alt={movie?.name}
+          className='h-[32vh] w-screen object-cover opacity-70'
+          src={`${baseURL}/${movie.backdrop_path || movie.poster_path}`}
+          alt={movie.name}
         />
       </div>
-      {/* Left Strip */}
-      <div className='absolute left-0 z-20 h-full w-4 bg-black/10'></div>
-      {/* Right Strip */}
-      <div className='absolute right-0 z-20 h-full w-4 bg-black/10'></div>
-      <nav
-        className={`duration-400 fixed z-20 h-[4.5vh] w-full transition ease-linear ${
-          isScrolledY
-            ? 'bg-black'
-            : 'bg-[#2b27271c] bg-gradient-to-b from-black/10'
-        } px-5 tablet:px-8
-        laptop:px-8 desktop:px-10`}
-      >
-        <div className='flex justify-between space-x-6'>
-          <div className='flex w-full items-center space-x-6 py-2.5'>
-            <Logo />
-            <Browse />
-          </div>
+      <Nav />
+      <Hero movie={movie} />
 
-          <div className='flex items-center space-x-5'>
-            <MagnifyingGlassIcon className='h-9 w-9' color='white' />
-            <BellIcon className='h-9 w-9' color='white' />
-            <img className='mt-1 rounded-[3.5px]' src={user} alt='User' />
-          </div>
-        </div>
-      </nav>
-
-      <div className='max-w-[345px] px-6 pt-10 tablet:px-8'>
-        <h1 className='text-[24px] font-[600] leading-8 text-white'>
-          {movie?.original_title ||
-            movie?.title ||
-            movie?.original_name ||
-            movie?.name}
-        </h1>
-        <p className='pt-3 text-[12px] text-white'>{movie?.overview}</p>
-        <div className='mt-3 flex items-center space-x-1.5'>
-          <button className='flex items-center justify-center space-x-2 rounded-[3.5px] bg-white px-3 py-1 font-semibold transition-all hover:bg-[#ffffffc5]'>
-            <PlayIcon className='h-5 w-5' />
-            <span className='text-[12px]'>Play</span>
-          </button>
-          <button
-            className='flex items-center justify-center space-x-2 rounded-[3.5px] bg-[#6f6f7188] 
-          px-3 py-1 font-semibold transition-all hover:bg-[#6f6f71d3]'
-          >
-            <InformationCircleIcon className='h-5 w-5' color='white' />
-            <span className='text-[12px] text-white'>More Info</span>
-          </button>
-        </div>
-      </div>
-
-      <div className='flex flex-col items-center justify-center space-y-6 pt-8 tablet:px-8'>
+      <div className='flex flex-col -space-y-4 pl-4 pt-10'>
         <Row url={fetchTrending} title='Trending Movies' />
         <Row url={fetchTopRated} title='Top Rated' />
         <Row url={fetchActionMovies} title='Action Thrillers' />
